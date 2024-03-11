@@ -1,16 +1,17 @@
 package Implement.Sorting.Selection;
 
-import java.util.Arrays;
+import Implement.Sorting.RandomData.FromResult;
+import Implement.Sorting.RandomData.ShowFinalResult;
 
 public class MainApp {
-    public static void main(String[] args) {
+    public static void main(String[] madeWithLove_byOskhar) {
+        int[] data = FromResult.handle();
 
-        Integer[] integers = { 10, 55, -5, 34, 7, 22, 19 };
-        String[] strings = { "Sylvanas", "Garrosh", "Varian", "Tyrande", "Gul'dan" };
-        System.out.println(Arrays.toString(integers) + " | " + Arrays.toString(strings));
-        new SelectionSort<>(integers).sort();
-        new SelectionSort<>(strings).sortWithStreams();
-        System.out.println(Arrays.toString(integers) + " | " + Arrays.toString(strings));
+        long startTime = System.currentTimeMillis();
+        Selection.handle(data);
+        long endTime = System.currentTimeMillis();
 
+        ShowFinalResult.handle(data);
+        System.out.println("Waktu eksekusi Selection sort: " + (endTime - startTime) + " milidetik");
     }
 }

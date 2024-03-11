@@ -1,15 +1,18 @@
 package Implement.Sorting.Radix;
 
-import java.util.Arrays;
+import Implement.Sorting.RandomData.FromResult;
+import Implement.Sorting.RandomData.ShowFinalResult;
 
 public class MainApp {
-    public static void main(String[] args) {
+    public static void main(String[] madeWithLove_byOskhar) {
+        int[] data = FromResult.handle();
 
-        int[] arr = { 1012, 5221, 2212, 3234, -3417, -1532, -1020, -1012, -5221, -2212, -3234, 3417, 1532, 1020 };
-        System.out.println(Arrays.toString(arr));
-        new RadixSort(arr).sort();
-        System.out.println(Arrays.toString(arr));
+        long startTime = System.currentTimeMillis();
+        Radix.handle(data);
+        long endTime = System.currentTimeMillis();
 
+        ShowFinalResult.handle(data);
+        System.out.println("Waktu eksekusi Radix sort: " + (endTime - startTime) + " milidetik");
     }
 
 }
