@@ -3,7 +3,7 @@ package Implement.Sorting.RandomData;
 import java.util.Random;
 
 public class RandomInteger {
-    public static int size = 1000000;
+    public static int size = 100000;
 
     public static int[] generateRandomArray() {
         int max = size;
