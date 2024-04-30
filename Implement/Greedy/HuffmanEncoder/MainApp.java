@@ -1,4 +1,4 @@
-package Implement.Greedy.Huffman;
+package Implement.Greedy.HuffmanEncoder;
 
 import java.util.PriorityQueue;
 
@@ -10,11 +10,16 @@ public class MainApp {
     }
 
     public static void printCode(HuffmanNode node, String s) {
-        if (node.left == null && node.right == null && isLetter(node.charData)) {
-            System.out.println(node.charData + "   |  " + s);
+        if (node == null) {
             return;
         }
 
+        // If the current node represents a character, print its code
+        if (isLetter(node.charData)) {
+            System.out.println(node.charData + "   |  " + s);
+        }
+
+        // Recursively print codes for the left and right subtrees
         printCode(node.left, s + "0");
         printCode(node.right, s + "1");
     }

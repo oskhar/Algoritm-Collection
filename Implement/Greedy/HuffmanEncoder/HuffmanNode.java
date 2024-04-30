@@ -1,4 +1,4 @@
-package Implement.Greedy.Huffman;
+package Implement.Greedy.HuffmanEncoder;
 
 class HuffmanNode {
     int data;
