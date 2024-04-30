@@ -3,7 +3,7 @@ package Implement.Sorting.RandomData;
 public class ToConsole {
 
     public static void main(String[] MadeWithLove_ByOskhar) {
-        ShowRandomUnique();
+        ShowRandomUniqueWrap();
     }
 
     public static void ShowRandom() {
@@ -25,6 +25,20 @@ public class ToConsole {
 
         for (int number : randomArray) {
             System.out.println(number);
+        }
+    }
+
+    public static void ShowRandomUniqueWrap() {
+        int[] randomArray = new int[RandomInteger.size];
+
+        for (int i = 1; i <= RandomInteger.size; i++) {
+            randomArray[i - 1] = i;
+        }
+
+        ShuffleArray.handle(randomArray);
+
+        for (int number : randomArray) {
+            System.out.print(number + " ");
         }
     }
 }

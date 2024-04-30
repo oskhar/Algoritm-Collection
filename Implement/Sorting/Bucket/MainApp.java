@@ -12,7 +12,7 @@ public class MainApp {
         long endTime = System.currentTimeMillis();
 
         ShowFinalResult.handle(data);
-        System.out.println("Waktu eksekusi Bubble sort: " + (endTime - startTime) + " milidetik");
+        System.out.println("Waktu eksekusi Bucket sort: " + (endTime - startTime) + " milidetik");
     }
 
 }

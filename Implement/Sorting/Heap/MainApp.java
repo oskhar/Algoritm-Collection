@@ -12,6 +12,6 @@ public class MainApp {
         long endTime = System.currentTimeMillis();
 
         ShowFinalResult.handle(data);
-        System.out.println("Waktu eksekusi Heap sort: " + (endTime - startTime) + " milidetik");
+        System.out.println("Waktu eksekusi Heap sort: " + (endTime - startTime) + "milidetik");
     }
 }

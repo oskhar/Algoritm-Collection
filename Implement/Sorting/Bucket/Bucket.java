@@ -1,23 +1,22 @@
 package Implement.Sorting.Bucket;
 
+import Implement.Sorting.RandomData.RandomInteger;
+
 public class Bucket {
     public static void handle(int[] arr) {
         if (arr.length == 0) {
             return;
         }
 
-        int n = arr.length;
-        int[][] buckets = new int[n][n];
+        int[][] buckets = new int[RandomInteger.size][RandomInteger.size];
 
-        // Initialize buckets
-        for (int i = 0; i < n; i++) {
-            buckets[i] = new int[n];
+        for (int i = 0; i < RandomInteger.size; i++) {
+            buckets[i] = new int[RandomInteger.size];
         }
 
-        // Add elements to buckets
         for (int item : arr) {
-            int index = (int) (item * n);
-            for (int i = 0; i < n; i++) {
+            int index = (int) (item * RandomInteger.size);
+            for (int i = 0; i < RandomInteger.size; i++) {
                 if (buckets[index][i] == 0) {
                     buckets[index][i] = item;
                     break;
@@ -25,15 +24,13 @@ public class Bucket {
             }
         }
 
-        // Sort individual buckets
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < RandomInteger.size; i++) {
             insertionSort(buckets[i]);
         }
 
-        // Concatenate buckets
         int index = 0;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+        for (int i = 0; i < RandomInteger.size; i++) {
+            for (int j = 0; j < RandomInteger.size; j++) {
                 if (buckets[i][j] != 0) {
                     arr[index++] = buckets[i][j];
                 }

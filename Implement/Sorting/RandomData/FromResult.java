@@ -6,12 +6,10 @@ import java.util.Scanner;
 
 public class FromResult {
     public static int[] handle() {
-        int size = RandomInteger.size;
-
         /*
          * Declaration variable
          */
-        int[] randomArray = new int[size];
+        int[] randomArray = new int[RandomInteger.size];
 
         /**
          * Bussines Logic
@@ -19,13 +17,13 @@ public class FromResult {
         try {
             File file = new File("result.txt");
             Scanner scanner = new Scanner(file);
+            String[] data = scanner.nextLine().split(" ");
+            scanner.close();
 
-            for (int i = 0; i < size; i++) {
-                int tmpNumber = Integer.parseInt(scanner.nextLine());
+            for (int i = 0; i < RandomInteger.size; i++) {
+                int tmpNumber = Integer.parseInt(data[i]);
                 randomArray[i] = tmpNumber;
             }
-
-            scanner.close();
 
         } catch (FileNotFoundException e) {
             System.out.println("Cannot read file: result.txt");
