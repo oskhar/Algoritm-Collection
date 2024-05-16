@@ -4,9 +4,8 @@ public class MainApp {
 
     // Driver code
     public static void main(String args[]) {
-        // int profit[] = new int[] { 36, 16, 21, 57, 28, 24, 13 };
-        // int weight[] = new int[] { 5, 2, 3, 6, 4, 3, 2 };
-        // int W = 10;
+        System.out.println("\n===== TABLE KNAPSACK =====\n");
+
         int profit[] = new int[] { 32, 59, 30, 17, 81, 16, 39, 25 };
         int weight[] = new int[] { 5, 2, 3, 2, 6, 2, 4, 3 };
         int W = 9;
@@ -14,6 +13,6 @@ public class MainApp {
 
         int result = Knapsack.handle(W, weight, profit, n);
 
-        System.out.println(result);
+        System.out.println("\nHasilnya adalah = " + result);
     }
 }

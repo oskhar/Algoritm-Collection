@@ -1,0 +1,5 @@
+Sorting (10 / 11 / 12)
+Grady (koin, knapsack, huffman, schedully)
+Graph (DFS, BFS, DJikstra, Kruskal, Prim, Warshall)
+Strassen's algoritma untuk Matrix Multiplication
+defide and councer
