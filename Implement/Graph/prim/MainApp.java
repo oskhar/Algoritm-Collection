@@ -12,44 +12,54 @@ public class MainApp {
         Vertex<String> vertexE = new Vertex<>("E");
         Vertex<String> vertexF = new Vertex<>("F");
 
-        Edge edgeAB = new Edge(4);
-        Edge edgeAC = new Edge(4);
-        Edge edgeBC = new Edge(2);
-        Edge edgeCD = new Edge(3);
-        Edge edgeCF = new Edge(4);
-        Edge edgeCE = new Edge(2);
-        Edge edgeDF = new Edge(3);
-        Edge edgeEF = new Edge(3);
+        Edge edgeAB = new Edge(10);
+        Edge edgeAD = new Edge(15);
+        Edge edgeBA = new Edge(10);
+        Edge edgeBC = new Edge(20);
+        Edge edgeBE = new Edge(13);
+        Edge edgeCB = new Edge(20);
+        Edge edgeCE = new Edge(5);
+        Edge edgeCF = new Edge(12);
+        Edge edgeDA = new Edge(15);
+        Edge edgeDE = new Edge(11);
+        Edge edgeDF = new Edge(16);
+        Edge edgeEC = new Edge(5);
+        Edge edgeEB = new Edge(13);
+        Edge edgeED = new Edge(11);
+        Edge edgeEF = new Edge(21);
+        Edge edgeFD = new Edge(16);
+        Edge edgeFE = new Edge(21);
+        Edge edgeFC = new Edge(12);
 
         vertexA.addNeighbor(vertexB, edgeAB);
-        vertexA.addNeighbor(vertexC, edgeAC);
+        vertexA.addNeighbor(vertexD, edgeAD);
 
-        vertexB.addNeighbor(vertexA, edgeAB);
+        vertexB.addNeighbor(vertexA, edgeBA);
         vertexB.addNeighbor(vertexC, edgeBC);
+        vertexB.addNeighbor(vertexE, edgeBE);
 
-        vertexC.addNeighbor(vertexA, edgeAC);
-        vertexC.addNeighbor(vertexB, edgeBC);
+        vertexC.addNeighbor(vertexB, edgeCB);
         vertexC.addNeighbor(vertexE, edgeCE);
-        vertexC.addNeighbor(vertexD, edgeCD);
         vertexC.addNeighbor(vertexF, edgeCF);
 
-        vertexD.addNeighbor(vertexC, edgeCD);
+        vertexD.addNeighbor(vertexA, edgeDA);
+        vertexD.addNeighbor(vertexE, edgeDE);
         vertexD.addNeighbor(vertexF, edgeDF);
 
-        vertexE.addNeighbor(vertexC, edgeCE);
+        vertexE.addNeighbor(vertexC, edgeEC);
+        vertexE.addNeighbor(vertexB, edgeEB);
+        vertexE.addNeighbor(vertexD, edgeED);
         vertexE.addNeighbor(vertexF, edgeEF);
 
-        vertexF.addNeighbor(vertexD, edgeDF);
-        vertexF.addNeighbor(vertexC, edgeCF);
-        vertexF.addNeighbor(vertexE, edgeEF);
+        vertexF.addNeighbor(vertexD, edgeFD);
+        vertexF.addNeighbor(vertexE, edgeFE);
+        vertexF.addNeighbor(vertexC, edgeFC);
 
         new Prim<>(Arrays.asList(vertexA, vertexB, vertexC, vertexD, vertexE, vertexF)).run();
 
-        Integer minimum = Stream.of(edgeAB, edgeAC, edgeBC, edgeCD, edgeCF, edgeCE, edgeDF, edgeEF)
+        Integer minimum = Stream.of(edgeAB, edgeAD, edgeBA, edgeBC, edgeBE, edgeCB, edgeCE, edgeCF, edgeDA, edgeDE, edgeDF, edgeEC, edgeEB, edgeED, edgeEF, edgeFD, edgeFE, edgeFC)
                 .filter(Edge::isIncluded).map(Edge::getWeight).reduce(0, Integer::sum);
         System.out.println("Minimum Weight: " + minimum);
 
     }
-
-
 }

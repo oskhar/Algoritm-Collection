@@ -3,3 +3,11 @@ Grady (koin, knapsack, huffman, schedully)
 Graph (DFS, BFS, DJikstra, Kruskal, Prim, Warshall)
 Strassen's algoritma untuk Matrix Multiplication
 defide and councer
+scalefree network
+simulate analing
+bee colony
+ant colony
+travel sallesman problem
+boyer moore
+rabin krab
+kmp

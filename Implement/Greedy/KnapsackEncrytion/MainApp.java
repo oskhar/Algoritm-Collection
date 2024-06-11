@@ -70,7 +70,7 @@ public class MainApp {
         int[] publicKey = generateSuperIncreasingSequence(n);
         int[] privateKey = generatePrivateKey(publicKey, q, r);
 
-        String plaintext = "11001010";
+        String plaintext = "11111110";
         int ciphertext = knapsackEncrypt(plaintext, publicKey);
         String decryptedMessage = knapsackDecrypt(ciphertext, privateKey, q);
 
