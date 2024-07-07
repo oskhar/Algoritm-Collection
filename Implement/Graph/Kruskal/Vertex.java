@@ -1,3 +1,5 @@
+package Implement.Graph.Kruskal;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -33,6 +35,10 @@ public class Vertex<T> {
 
     public Set<Vertex<T>> getNeighbors() {
         return neighbors;
+    }
+
+    public void setNeighbors(Set<Vertex<T>> neighbors) {
+        this.neighbors = neighbors;
     }
 
     public void addNeighbor(Vertex<T> vertex) {

@@ -1,4 +1,4 @@
-import CycleDetection; // Library tambahan
+package Implement.Graph.Kruskal;
 
 import java.util.*;
 import java.util.stream.Stream;

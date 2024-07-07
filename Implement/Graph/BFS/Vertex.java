@@ -1,10 +1,12 @@
-import java.util.ArrayList;
+package Implement.Graph.BFS;
+
+import java.util.LinkedList;
 import java.util.List;
 
 public class Vertex<T> {
     private final T data;
     private boolean visited;
-    private final List<Vertex<T>> neighbors = new ArrayList<>();
+    private final List<Vertex<T>> neighbors = new LinkedList<>();
 
     public Vertex(T data) {
         this.data = data;

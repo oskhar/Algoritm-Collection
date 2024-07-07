@@ -1,9 +1,9 @@
-import Vertex; // Library tambahan
+package Implement.Graph.Kruskal;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class CycleDetection<T> {
+public class CycleDetectionUndirected<T> {
 
     public boolean hasCycle(List<Vertex<T>> vertices) {
         for (Vertex<T> vertex : vertices) {
@@ -63,7 +63,7 @@ public class CycleDetection<T> {
         vertexF.addNeighbor(vertexE);
 
         List<Vertex<String>> graph = Arrays.asList(vertexA, vertexB, vertexC, vertexD, vertexE, vertexF);
-        System.out.println(new CycleDetection<String>().hasCycle(graph));
+        System.out.println(new CycleDetectionUndirected<String>().hasCycle(graph));
 
     }
 

@@ -1,3 +1,5 @@
+package Implement.Graph.Dijkstra;
+
 import java.util.List;
 
 public class MainApp {

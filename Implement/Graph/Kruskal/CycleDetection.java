@@ -1,4 +1,4 @@
-import Vertex; // Library tambahan
+package Implement.Graph.Kruskal;
 
 import java.util.Arrays;
 import java.util.List;
