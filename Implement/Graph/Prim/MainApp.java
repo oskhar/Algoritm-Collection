@@ -1,3 +1,5 @@
+package Implement.Graph.Prim;
+
 import java.util.Arrays;
 import java.util.stream.Stream;
 

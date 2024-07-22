@@ -1,3 +1,5 @@
+package Implement.Graph.Warshall;
+
 import java.util.stream.IntStream;
 
 public class FloydWarshall {

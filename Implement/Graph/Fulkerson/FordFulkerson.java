@@ -25,7 +25,11 @@ public class FordFulkerson<T> {
         return maxFlow.get();
     }
 
-    private Integer getMinFlowInPath(List<Vertex<T>> path) {
+    public List<List<Vertex<T>>> getPaths() {
+        return paths;
+    }
+
+    public Integer getMinFlowInPath(List<Vertex<T>> path) {
         return IntStream.range(0, path.size() - 1)
                 .mapToObj(vertexIdx -> getNeighborEdgeWeight(path, vertexIdx))
                 .min(Integer::compareTo).orElse(0);
@@ -57,5 +61,4 @@ public class FordFulkerson<T> {
                 });
         current.setVisited(false);
     }
-
 }

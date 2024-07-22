@@ -1,3 +1,5 @@
+package Implement.Graph.Prim;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;

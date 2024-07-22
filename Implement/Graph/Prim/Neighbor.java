@@ -1,3 +1,5 @@
+package Implement.Graph.Prim;
+
 public class Neighbor<T> {
     private final Vertex<T> vertex;
     private final Edge edge;

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MainApp {
 
-    public static void main(String[] args) {
+public static void main(String[] args) {
 
         Vertex<String> vertexA = new Vertex<>("A");
         Vertex<String> vertexB = new Vertex<>("B");
@@ -65,6 +65,6 @@ public class MainApp {
         new KruskalAlgorithm<>(graph3).run();
         new KruskalAlgorithm<>(graph4).run();
 
-    }
+}
 
 }

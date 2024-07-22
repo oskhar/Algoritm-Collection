@@ -11,8 +11,24 @@ public class MainApp {
         int W = 9;
         int n = profit.length;
 
+        System.err.print("profit: [ ");
+
+        for (int i = 0; i < profit.length; i++) {
+            System.out.print(profit[i]+" ");
+        }
+
+        System.err.println("]");
+
+        System.err.print("weight: [ ");
+
+        for (int i = 0; i < weight.length; i++) {
+            System.out.print(weight[i]+" ");
+        }
+
+        System.err.println("]\n");
+
         int result = Knapsack.handle(W, weight, profit, n);
 
-        System.out.println("\nHasilnya adalah = " + result);
+        System.out.println("\nBerat maksimum = " + result);
     }
 }

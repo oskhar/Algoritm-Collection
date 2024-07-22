@@ -4,13 +4,17 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Vertex<T> {
+
     private final T data;
     private boolean visited;
-    private boolean beingVisited;
-    private Set<Vertex<T>> neighbors = new HashSet<>();
+    private boolean beingVisited; // Tambahan field untuk mendeteksi siklus
+    private Set<Vertex<T>> neighbors;
 
     public Vertex(T data) {
         this.data = data;
+        this.visited = false;
+        this.beingVisited = false; // Inisialisasi field tambahan
+        this.neighbors = new HashSet<>();
     }
 
     public T getData() {
@@ -41,32 +45,7 @@ public class Vertex<T> {
         this.neighbors = neighbors;
     }
 
-    public void addNeighbor(Vertex<T> vertex) {
-        neighbors.add(vertex);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-
-        Vertex<?> vertex = (Vertex<?>) obj;
-
-        return data != null ? data.equals(vertex.data) : vertex.data == null;
-    }
-
-    @Override
-    public int hashCode() {
-        return data != null ? data.hashCode() : 0;
-    }
-
-    @Override
-    public String toString() {
-        return "Vertex{" +
-                "data=" + data +
-                ", visited=" + visited +
-                ", beingVisited=" + beingVisited +
-                ", neighbors=" + neighbors +
-                '}';
+    public void addNeighbor(Vertex<T> neighbor) {
+        this.neighbors.add(neighbor);
     }
 }

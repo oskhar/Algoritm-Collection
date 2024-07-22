@@ -1,19 +1,18 @@
 package Implement.Graph.Kruskal;
 
-public class Edge<T> implements Comparable<Edge<T>> {
+public class Edge<T> {
+
     private final Vertex<T> source;
     private final Vertex<T> destination;
     private final int weight;
 
     public Edge(Vertex<T> source, Vertex<T> destination, int weight) {
         if (source == null || destination == null) {
-            throw new IllegalArgumentException("Source and destination vertices cannot be null");
+            throw new NullPointerException("Vertices cannot be null");
         }
         this.source = source;
         this.destination = destination;
         this.weight = weight;
-        source.addNeighbor(destination);
-        destination.addNeighbor(source);
     }
 
     public Vertex<T> getSource() {
@@ -26,10 +25,5 @@ public class Edge<T> implements Comparable<Edge<T>> {
 
     public int getWeight() {
         return weight;
-    }
-
-    @Override
-    public int compareTo(Edge<T> edge) {
-        return Integer.compare(weight, edge.getWeight());
     }
 }

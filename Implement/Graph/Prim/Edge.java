@@ -1,3 +1,5 @@
+package Implement.Graph.Prim;
+
 public class Edge {
     private final int weight;
     private boolean included;
