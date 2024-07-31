@@ -11,3 +11,7 @@ travel sallesman problem
 boyer moore
 rabin krab
 kmp
+tantangan
+- data harus outofmemory
+- ram jangan sampai penuh
+- melakukan eksperimen pada data yang tidak dapat dibuka atau dilihat langsung

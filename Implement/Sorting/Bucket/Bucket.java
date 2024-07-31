@@ -8,38 +8,32 @@ public class Bucket {
             return;
         }
 
-        int[][] buckets = new int[RandomInteger.size][RandomInteger.size];
+        int n = arr.length;
+        int maxValue = findMaxValue(arr);
+        int numberOfBuckets = (int) Math.sqrt(n);
 
-        for (int i = 0; i < RandomInteger.size; i++) {
-            buckets[i] = new int[RandomInteger.size];
-        }
+        // Create buckets
+        int[][] buckets = new int[numberOfBuckets][n];
+        int[] bucketSizes = new int[numberOfBuckets];
 
+        // Distribute input array values into buckets
         for (int item : arr) {
-            int index = (int) (item * RandomInteger.size);
-            for (int i = 0; i < RandomInteger.size; i++) {
-                if (buckets[index][i] == 0) {
-                    buckets[index][i] = item;
-                    break;
-                }
-            }
+            int bucketIndex = (item * numberOfBuckets) / (maxValue + 1);
+            buckets[bucketIndex][bucketSizes[bucketIndex]++] = item;
         }
 
-        for (int i = 0; i < RandomInteger.size; i++) {
-            insertionSort(buckets[i]);
-        }
-
+        // Sort each bucket and concatenate
         int index = 0;
-        for (int i = 0; i < RandomInteger.size; i++) {
-            for (int j = 0; j < RandomInteger.size; j++) {
-                if (buckets[i][j] != 0) {
-                    arr[index++] = buckets[i][j];
-                }
+        for (int i = 0; i < numberOfBuckets; i++) {
+            insertionSort(buckets[i], bucketSizes[i]);
+            for (int j = 0; j < bucketSizes[i]; j++) {
+                arr[index++] = buckets[i][j];
             }
         }
     }
 
-    private static void insertionSort(int[] arr) {
-        for (int i = 1; i < arr.length; i++) {
+    private static void insertionSort(int[] arr, int length) {
+        for (int i = 1; i < length; i++) {
             int key = arr[i];
             int j = i - 1;
             while (j >= 0 && arr[j] > key) {
@@ -48,5 +42,15 @@ public class Bucket {
             }
             arr[j + 1] = key;
         }
+    }
+
+    private static int findMaxValue(int[] arr) {
+        int max = arr[0];
+        for (int item : arr) {
+            if (item > max) {
+                max = item;
+            }
+        }
+        return max;
     }
 }

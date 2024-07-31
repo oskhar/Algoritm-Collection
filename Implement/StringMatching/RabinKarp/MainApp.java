@@ -76,5 +76,3 @@ public class MainApp {
 		search(pat, txt, q);
 	}
 }
-
-// This code is contributed by nuclode

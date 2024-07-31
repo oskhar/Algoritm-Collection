@@ -18,8 +18,8 @@ public class MainApp {
 
     public static void main(String[] args) {
         // Langsung memasukkan data untuk diproses
-        String str = "123456789";
-        String str1 = "Z";
+        String str = "12345678559";
+        String str1 = "56785";
 
         char[] arr = str.toCharArray();
         char[] brr = str1.toCharArray();

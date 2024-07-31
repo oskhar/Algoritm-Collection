@@ -1,3 +1,5 @@
+package Implement.Tree.Heap;
+
 public interface IHeap<T extends Comparable<T>> {
 
     IHeap<T> insert(T data);
